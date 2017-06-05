@@ -1,0 +1,11 @@
+---
+name: gitbucket
+
+templates:
+  ctl.erb: bin/ctl
+
+packages:
+- java
+- gitbucket
+
+properties: {}

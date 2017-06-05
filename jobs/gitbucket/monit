@@ -1,0 +1,5 @@
+check process gitbucket
+ with pidfile /var/vcap/sys/run/gitbucket/pid
+ start program "/var/vcap/jobs/gitbucket/bin/ctl start"
+ stop program "/var/vcap/jobs/gitbucket/bin/ctl stop"
+ group vcap

@@ -1,0 +1,36 @@
+---
+# bosh interpolate gitbucket.yml -v internal_ip=10.244.0.206
+# bosh deploy -d gitbucket gitbucket.yml -v internal_ip=10.244.0.206
+
+name: gitbucket
+
+releases:
+- name: gitbucket
+  version: latest
+
+stemcells:
+- alias: trusty
+  os: ubuntu-trusty
+  version: latest
+
+instance_groups:
+- name: gitbucket
+  instances: 1
+  vm_type: default
+  persist_disk: default
+  stemcell: trusty
+  azs: [z1]
+  networks:
+  - name: default
+    static_ips: [((internal_ip))]
+  jobs:
+  - name: gitbucket
+    release: gitbucket
+
+update:
+  canaries: 1
+  max_in_flight: 1
+  serial: false
+  canary_watch_time: 1000-60000
+  update_watch_time: 1000-60000
+

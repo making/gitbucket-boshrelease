@@ -1,0 +1,7 @@
+name: gitbucket
+blobstore:
+  provider: s3
+  options:
+    bucket_name: gitbucket-boshrelease
+    region: ap-northeast-1
+    endpoint: https://s3-ap-northeast-1.amazonaws.com

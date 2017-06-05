@@ -1,0 +1,7 @@
+---
+name: gitbucket
+
+dependencies: []
+
+files:
+- gitbucket/gitbucket-4.13.war

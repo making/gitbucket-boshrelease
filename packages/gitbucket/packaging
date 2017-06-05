@@ -1,0 +1,3 @@
+set -e
+
+cp -ar gitbucket/gitbucket-4.13.war $BOSH_INSTALL_TARGET/gitbucket.war
